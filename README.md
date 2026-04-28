@@ -1,9 +1,30 @@
+![Version](https://img.shields.io/badge/version-v1.2.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange)
+![Status](https://img.shields.io/badge/status-stable-success)
+
 # KAlert.js
 
 ✨ Lightweight, modern, animated alert dialog library for JavaScript projects.
 
 KAlert.js provides beautiful alert and confirm dialogs with **zero setup required**.
 It automatically loads styles and icons and works instantly via CDN.
+
+---
+
+# ❤️ Support the Project
+
+If you find **KAlert.js** useful, please consider supporting the project:
+
+⭐ Star this repository  
+🐛 Report issues  
+💡 Suggest new features  
+
+And don’t forget to follow me on Instagram for more developer content:
+
+📸 https://instagram.com/coderx09
+
+Thanks for your support! 🚀
 
 ---
 

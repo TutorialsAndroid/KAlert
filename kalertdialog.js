@@ -1,4 +1,7 @@
 (function (global) {
+  // Version for cache busting
+  const version = "v1.2.0";
+
   if (!document.getElementById("kalert-fa")) {
     const fa = document.createElement("link");
 
@@ -20,7 +23,7 @@
     style.rel = "stylesheet";
 
     style.href =
-      "https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.2.0/kalertdialog.css";
+      "https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@" + version + "/kalertdialog.css";
 
     document.head.appendChild(style);
   }
