@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="kalertdialog.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Test KAlertDialog</h1>
+      <button id="showAlert">Show Alert</button>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script> -->
+    <script src="kalertdialog.js"></script>
+
+    <script>
+      document
+        .getElementById("showAlert")
+        .addEventListener("click", function () {
+          KAlert.show("Hello, this is a KAlertDialog!", "success");
+        });
+    </script>
+  </body>
+</html>
