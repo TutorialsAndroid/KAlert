@@ -2,26 +2,141 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="kalertdialog.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KAlert.js Demo</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script>
+
+    <style>
+      body {
+        font-family: system-ui;
+        background: linear-gradient(135deg, #6366f1, #3b82f6);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        width: 420px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      button {
+        border: none;
+        padding: 14px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.25s;
+        color: white;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .success {
+        background: #22c55e;
+      }
+
+      .error {
+        background: #ef4444;
+      }
+
+      .warning {
+        background: #f59e0b;
+      }
+
+      .info {
+        background: #3b82f6;
+      }
+
+      .footer {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #888;
+      }
+    </style>
   </head>
+
   <body>
-    <div>
-      <h1>Test KAlertDialog</h1>
-      <button id="showAlert">Show Alert</button>
+    <div class="container">
+      <h1>KAlert.js Demo</h1>
+
+      <div class="subtitle">Modern JavaScript Alert Dialog Library</div>
+
+      <div class="buttons">
+        <button
+          class="success"
+          onclick="KAlert.show('Operation successful!', 'success')"
+        >
+          Success Alert
+        </button>
+
+        <button
+          class="error"
+          onclick="KAlert.show('Something went wrong!', 'error')"
+        >
+          Error Alert
+        </button>
+
+        <button
+          class="warning"
+          onclick="KAlert.show('Are you sure about this?', 'warning')"
+        >
+          Warning Alert
+        </button>
+
+        <button
+          class="info"
+          onclick="KAlert.show('Here is some information.', 'info')"
+        >
+          Info Alert
+        </button>
+
+        <button class="info" onclick="confirmExample()">
+          Confirm Dialog Example
+        </button>
+      </div>
+
+      <div class="footer">Powered by <b>KAlert.js v1.1.1</b></div>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script> -->
-    <script src="kalertdialog.js"></script>
-
     <script>
-      document
-        .getElementById("showAlert")
-        .addEventListener("click", function () {
-          KAlert.show("Hello, this is a KAlertDialog!", "success");
+      function confirmExample() {
+        KAlert.confirm("Do you want to continue?").then((result) => {
+          if (result) {
+            KAlert.show("Confirmed!", "success");
+          } else {
+            KAlert.show("Cancelled!", "error");
+          }
         });
+      }
     </script>
   </body>
 </html>
