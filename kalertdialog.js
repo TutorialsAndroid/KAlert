@@ -1,7 +1,6 @@
 const style = document.createElement("link");
-
 style.rel = "stylesheet";
-style.href = "https://cdn.jsdelivr.net/gh/TutorialsAndroid/kalertdialog@latest/kalertdialog.css";
+style.href = "https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@latest/kalertdialog.css";
 
 document.head.appendChild(style);
 
