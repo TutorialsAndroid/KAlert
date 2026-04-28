@@ -10,13 +10,21 @@ It automatically loads styles and icons and works instantly via CDN.
 # 🚀 Features
 
 ✅ Animated modal dialogs
+
 ✅ Promise-based API
+
 ✅ Font Awesome icons included automatically
+
 ✅ Blur background overlay
+
 ✅ Confirm dialog support
+
 ✅ Zero configuration required
+
 ✅ Works via CDN (jsDelivr)
+
 ✅ Lightweight and fast
+
 ✅ No dependencies
 
 ---
