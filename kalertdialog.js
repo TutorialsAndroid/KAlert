@@ -70,28 +70,20 @@
       box.className = `kalert-box kalert-${type}`;
 
       box.innerHTML = `
+        <div class="kalert-icon">
+          <i class="fa-solid ${icon(type)}"></i>
+        </div>
 
-<div class="kalert-icon">
+        ${title ? `<div class="kalert-title">${title}</div>` : ""}
 
-<i class="fa-solid ${icon(type)}"></i>
+        <div class="kalert-message">${message}</div>
+        ${input ? `<input class="kalert-input" placeholder="${placeholder}"/>` : ""}
 
-</div>
-
-${title ? `<div class="kalert-title">${title}</div>` : ""}
-
-<div class="kalert-message">${message}</div>
-
-${input ? `<input class="kalert-input" placeholder="${placeholder}"/>` : ""}
-
-<div class="kalert-buttons">
-
-${showCancel ? `<button class="kalert-btn cancel">${cancelText}</button>` : ""}
-
-<button class="kalert-btn confirm">${confirmText}</button>
-
-</div>
-
-`;
+        <div class="kalert-buttons">
+          ${showCancel ? `<button class="kalert-btn cancel">${cancelText}</button>` : ""}
+          <button class="kalert-btn confirm">${confirmText}</button>
+        </div>
+      `;
 
       overlay.appendChild(box);
 
