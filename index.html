@@ -7,13 +7,16 @@
     <!-- TITLE -->
     <title>KAlert.js Demo</title>
     <!-- DESCRIPTION -->
-    <meta name="description" content="Modern JavaScript Alert Dialog Library">
+    <meta name="description" content="Modern JavaScript Alert Dialog Library" />
     <!-- KEYWORDS -->
-    <meta name="keywords" content="JavaScript, alert, dialog, library, kalert">
+    <meta
+      name="keywords"
+      content="JavaScript, alert, dialog, library, kalert"
+    />
     <!-- AUTHOR -->
-    <meta name="author" content="TutorialsAndroid">
+    <meta name="author" content="TutorialsAndroid" />
 
-    <script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.2.0/kalertdialog.js"></script>
 
     <style>
       body {
@@ -99,28 +102,52 @@
       <div class="buttons">
         <button
           class="success"
-          onclick="KAlert.show('Operation successful!', 'success')"
+          onclick="
+            KAlert.show({
+              title: 'Success',
+              message: 'Operation successful!',
+              type: 'success',
+            })
+          "
         >
           Success Alert
         </button>
 
         <button
           class="error"
-          onclick="KAlert.show('Something went wrong!', 'error')"
+          onclick="
+            KAlert.show({
+              title: 'Error',
+              message: 'Something went wrong!',
+              type: 'error',
+            })
+          "
         >
           Error Alert
         </button>
 
         <button
           class="warning"
-          onclick="KAlert.show('Are you sure about this?', 'warning')"
+          onclick="
+            KAlert.show({
+              title: 'Warning',
+              message: 'Are you sure about this?',
+              type: 'warning',
+            })
+          "
         >
           Warning Alert
         </button>
 
         <button
           class="info"
-          onclick="KAlert.show('Here is some information.', 'info')"
+          onclick="
+            KAlert.show({
+              title: 'Information',
+              message: 'Here is some information.',
+              type: 'info',
+            })
+          "
         >
           Info Alert
         </button>
@@ -128,18 +155,48 @@
         <button class="info" onclick="confirmExample()">
           Confirm Dialog Example
         </button>
+
+        <button class="success" onclick="promptExample()">
+          Prompt Dialog Example
+        </button>
       </div>
 
-      <div class="footer">Powered by <b>KAlert.js v1.1.1</b></div>
+      <div class="footer">Powered by <b>KAlert.js v1.2.0</b></div>
     </div>
 
     <script>
       function confirmExample() {
-        KAlert.confirm("Do you want to continue?").then((result) => {
+        KAlert.confirm({
+          title: "Continue?",
+          message: "Do you want to proceed?",
+        }).then((result) => {
           if (result) {
-            KAlert.show("Confirmed!", "success");
+            KAlert.show({
+              title: "Confirmed",
+              message: "You pressed confirm",
+              type: "success",
+            });
           } else {
-            KAlert.show("Cancelled!", "error");
+            KAlert.show({
+              title: "Cancelled",
+              message: "You cancelled the action",
+              type: "error",
+            });
+          }
+        });
+      }
+
+      function promptExample() {
+        KAlert.prompt({
+          title: "Enter your name",
+          placeholder: "Type here...",
+        }).then((value) => {
+          if (value) {
+            KAlert.show({
+              title: "Hello!",
+              message: value,
+              type: "success",
+            });
           }
         });
       }

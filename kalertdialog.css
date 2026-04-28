@@ -1,39 +1,51 @@
 .kalert-overlay {
   position: fixed;
+
   inset: 0;
 
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(8px);
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
-  animation: kalertFade 0.25s ease;
+  animation: kfade 0.25s ease;
 
   z-index: 9999;
 }
 
 .kalert-box {
-  width: 320px;
+  width: 340px;
 
   background: white;
 
-  border-radius: 16px;
+  border-radius: 18px;
 
-  padding: 28px;
+  padding: 30px;
 
   text-align: center;
 
   font-family: system-ui;
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 
-  animation: kalertScale 0.25s ease;
+  animation: kscale 0.25s ease;
+}
+
+.kalert-title {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
 }
 
 .kalert-icon {
-  font-size: 48px;
+  font-size: 50px;
 
   margin-bottom: 12px;
 }
@@ -55,56 +67,76 @@
 }
 
 .kalert-message {
-  font-size: 16px;
   margin-bottom: 20px;
+
+  color: #555;
+}
+
+.kalert-input {
+  width: 100%;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  border: 1px solid #ddd;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
 }
 
 .kalert-buttons {
   display: flex;
-  justify-content: center;
+
   gap: 10px;
+
+  justify-content: center;
 }
 
 .kalert-btn {
   border: none;
 
-  padding: 10px 18px;
+  padding: 10px 20px;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
   cursor: pointer;
 
   font-weight: 600;
 
-  background: #4f46e5;
+  background: #6366f1;
 
   color: white;
 
   transition: 0.2s;
 }
 
+.kalert-btn.cancel {
+  background: #e5e7eb;
+
+  color: #111;
+}
+
 .kalert-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.kalert-warning .kalert-btn:last-child {
-  background: #ef4444;
-}
-
-@keyframes kalertFade {
+@keyframes kfade {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-@keyframes kalertScale {
+@keyframes kscale {
   from {
-    transform: scale(0.85);
+    transform: scale(0.8);
     opacity: 0;
   }
 

@@ -34,7 +34,7 @@ It automatically loads styles and icons and works instantly via CDN.
 Include via CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.2.0/kalertdialog.js"></script>
 ```
 
 That's it. No setup needed.
@@ -46,7 +46,11 @@ That's it. No setup needed.
 ## Simple Alert
 
 ```js
-KAlert.show("Saved successfully!", "success");
+KAlert.show({
+    title: "Success",
+    message: "Saved successfully!",
+    type: "success"
+});
 ```
 
 Supported types:
@@ -61,7 +65,11 @@ info
 Example:
 
 ```js
-KAlert.show("Something went wrong", "error");
+ KAlert.show({
+    title: 'Error',
+    message: 'Something went wrong!',
+    type: 'error',
+});
 ```
 
 ---
@@ -71,19 +79,15 @@ KAlert.show("Something went wrong", "error");
 Promise-based confirm dialog:
 
 ```js
-KAlert.confirm("Delete this file?")
-.then(result => {
-
-if(result){
-
-console.log("User confirmed");
-
-}else{
-
-console.log("User cancelled");
-
-}
-
+KAlert.confirm({
+title: "Delete this file?",
+message: "This action cannot be undone"
+}).then(result => {
+    if(result){
+        console.log("User confirmed");
+    }else{
+        console.log("User cancelled");
+    }
 });
 ```
 
@@ -125,7 +129,7 @@ KAlert provides:
 Use version locking for stability:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.2.0/kalertdialog.js"></script>
 ```
 
 Or latest version:
@@ -139,14 +143,20 @@ Or latest version:
 # 🛠 Example Full Usage
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.1.1/kalertdialog.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/TutorialsAndroid/KAlert@v1.2.0/kalertdialog.js"></script>
 
 <script>
 
-KAlert.show("Welcome!", "info");
+KAlert.show({
+    title: "Welcome",
+    message: "Hello from KAlert.js",
+    type: "info"
+});
 
-KAlert.confirm("Continue?")
-.then(result => console.log(result));
+KAlert.confirm({
+title: "Continue?",
+message: "Do you want to proceed?"
+}).then(result => console.log(result));
 
 </script>
 ```
