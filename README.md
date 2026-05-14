@@ -1,6 +1,7 @@
 ![Version](https://img.shields.io/badge/version-v1.2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange)
+[![](https://data.jsdelivr.com/v1/package/gh/TutorialsAndroid/KAlert/badge)](https://www.jsdelivr.com/package/gh/TutorialsAndroid/KAlert)
 ![Status](https://img.shields.io/badge/status-stable-success)
 
 # KAlert.js
